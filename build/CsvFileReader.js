@@ -18,13 +18,8 @@ class CsvReader {
             .split('\n')
             .map((row) => {
             return row.split(',');
-        });
-        let MatchResult;
-        (function (MatchResult) {
-            MatchResult["HomeWin"] = "H";
-            MatchResult["AwayWin"] = "A";
-            MatchResult["Draw"] = "D";
-        })(MatchResult || (MatchResult = {}));
+        })
+            .map(this.mapRow);
     }
 }
 exports.CsvReader = CsvReader;
